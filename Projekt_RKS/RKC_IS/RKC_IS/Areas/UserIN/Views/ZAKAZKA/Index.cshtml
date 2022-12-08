@@ -1,0 +1,272 @@
+﻿@*@model IEnumerable<RKC_IS.DataAccess.Model.AutoMapping.ZAKAZKA>*@
+
+@model PagedList.IPagedList<RKC_IS.DataAccess.Model.AutoMapping.ZAKAZKA>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Seznam zakázek";
+    Layout = "~/Areas/UserIN/Views/Shared/_LayoutLisovna.cshtml";
+
+
+}
+
+<h2>Seznam zakázek</h2>
+
+@using (Html.BeginForm("Index", "ZAKAZKA", FormMethod.Get))
+{
+    <p>
+        Hledej podle STAV: @Html.TextBox("searchStringSTAV", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Hledat" />
+    </p>
+}
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SY_STAV.STAV)*@
+
+            @*@Html.DisplayNameFor(model => model.DOMENA)*@
+
+            @*@Html.ActionLink("DOMENA", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+            @Ajax.ActionLink("STAV", "Index", "ZAKAZKA", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+
+              @*@Ajax.ActionLink("DOMENA", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })*@
+
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SY_STAV.POPIS)*@
+            POPIS
+
+            @*@Html.DisplayNameFor(model => model.KOD)*@
+
+            @*@Html.ActionLink("KOD", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })*@
+
+            @*@Ajax.ActionLink("POPIS", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })*@
+
+        </th>
+        <th>
+            Číslo
+        </th>
+        <th>
+            Označení
+        </th>
+        <th>
+            Název procesu
+        </th>
+        <th>
+            Plánované množství
+        </th>
+        <th>
+            vyrobené-zahlášené množství
+        </th>
+        <th>
+            zbývající množství
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Hodnota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KonecnyT)
+            </th>*@
+        <th>
+            čas nasazení
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Pos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nasobnost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CyklusCas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DobaPriprava)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DobaVyroba)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DobaPripravaVyroba)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Priorita)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PoznamkaNaVP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DelkaVymeny)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CyklusCasReal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumUkonceni)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZahlaseneMnozstvi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZaskladneneMnozstvi)
+            </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.C_USER)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.C_DATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.M_USER)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.M_DATE)
+            </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.STAV_NASLEDUJICI)
+            </th>*@
+        <th>
+            přidělená forma
+        </th>
+        <th>
+           
+            @Ajax.ActionLink("přidělený stroj", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SY_STAV.STAV)
+
+                @*@Html.ActionLink(item.SY_STAV.STAV, "Edit", new { id = item.ID })*@
+                @*<a href="@Url.Action("Details", "ZAKAZKA", new { id = item.ID})">@Html.DisplayFor(modelItem => item.SY_STAV.STAV)</a>*@
+
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.ID })*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SY_STAV.POPIS)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.CisloZakazka)*@
+
+                <a href="@Url.Action("Details", "ZAKAZKA", new { id = item.ID})">@Html.DisplayFor(modelItem => item.CisloZakazka)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Oznaceni)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazevProces)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlanovaneMnozstviNa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VyrobenoZahlaseno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZbyvajiciMnozstvi)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Hodnota)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KonecnyT)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.DatumNasazeni)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Pos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nasobnost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CyklusCas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DobaPriprava)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DobaVyroba)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DobaPripravaVyroba)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Priorita)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PoznamkaNaVP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DelkaVymeny)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CyklusCasReal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DatumUkonceni)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZahlaseneMnozstvi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZaskladneneMnozstvi)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.C_USER)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.C_DATE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.M_USER)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.M_DATE)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.STAV_NASLEDUJICI)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.FORMA.ZAFO_Forma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STROJ.Nazev)
+                @Html.DisplayFor(modelItem => item.STROJ.Cislo)
+            </td>
+
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
+            </td>*@
+        </tr>
+    }
+
+</table>
+
+
+<br />
+Stránka @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) z @Model.PageCount
+
+
+@*@Html.PagedListPager(
+        Model,
+        page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }),
+        PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "dynamicContent" })
+    )*@
+
+@Html.PagedListPager(
+    Model,
+    page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }),
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+)
+

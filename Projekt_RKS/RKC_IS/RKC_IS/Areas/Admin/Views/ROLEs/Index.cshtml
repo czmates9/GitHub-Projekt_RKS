@@ -1,0 +1,75 @@
+﻿@model IEnumerable<RKC_IS.DataAccess.Model.AutoMapping.ROLE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ZKRATKA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POPIS_ROLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STAV_NASLEDUJICI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_USER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_USER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SY_STAV.STAV)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZKRATKA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POPIS_ROLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STAV_NASLEDUJICI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_USER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_USER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SY_STAV.STAV)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

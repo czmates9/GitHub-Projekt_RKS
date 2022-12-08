@@ -1,0 +1,40 @@
+﻿@model IEnumerable<RKC_IS.DataAccess.Model.AutoMapping.USER_GRUPA>
+
+@{
+    ViewBag.Title = "Seskupení - operátor";
+}
+
+    <h2>Seskupení - operáto</h2>
+
+<p>
+    @Html.ActionLink("ZALOŽIT", "Create","USER_GRUPA", new { @class="btn btn-default"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Název skupiny
+        </th>
+        <th>
+            Zaměstnanec
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.GRUPA.Nazev)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.USER.Jmeno)
+        @Html.DisplayFor(modelItem => item.USER.Prijmeni)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
+}
+
+</table>

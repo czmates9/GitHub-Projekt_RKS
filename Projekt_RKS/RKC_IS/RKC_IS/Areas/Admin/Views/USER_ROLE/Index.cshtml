@@ -1,0 +1,45 @@
+﻿@model IEnumerable<RKC_IS.DataAccess.Model.AutoMapping.USER_ROLE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.L_PLATI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ROLE.POPIS_ROLE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.L_PLATI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ROLE.POPIS_ROLE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

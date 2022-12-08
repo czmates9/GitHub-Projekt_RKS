@@ -1,0 +1,272 @@
+﻿@model PagedList.IPagedList<RKC_IS.DataAccess.Model.AutoMapping.USER>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Seznam uživatelů";
+    
+
+    AjaxOptions options = new AjaxOptions
+    {
+        UpdateTargetId = "searchResult",
+        Confirm = "Are you sure to start search?",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "dynamicContent"
+    };
+}
+
+<h2>Seznam uživatelů</h2>
+
+
+@using (Html.BeginForm("Index", "UZIVATEL", FormMethod.Get))
+{
+    <p>
+        Hledej podle Jména nebo Přijmení: @Html.TextBox("searchStringJmeno", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            Oddělení
+        </th>
+        <th>
+
+            @Ajax.ActionLink("Jméno", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+
+        </th>
+        <th>
+
+            @Ajax.ActionLink("Přijmení", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+        </th>
+        <th>
+            Osobní číslo
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Obec)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ulice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CisloDomu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PSC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatumNastup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlatovaTrida)
+            </th>*@
+        <th>
+            Směna
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.CasPrihlaseni)
+            </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.C_USER)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.M_USER)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.C_DATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.M_DATE)
+            </th>*@
+        <th>
+            Login
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.PasswordHash)
+            </th>*@
+        <th>
+            Email
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.STAV_NASLEDUJICI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailConfirmed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecurityStamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LockoutEnabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccessFailedCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsConfirmed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PasswordQuestion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PasswordAnswer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActivationToken)
+            </th>*@
+        <th>
+            STAV-POPIS
+        </th>
+        <th>
+            STAV
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    @*<td>
+        @Html.DisplayFor(modelItem => item.ZAOR_organizace)
+    </td>*@
+    <td>
+        @*@Html.DisplayFor(modelItem => item.ZAOR_Organizace)*@
+        @Html.Action("CiselnikPopis", new { _kod = item.ZAOR_organizace })
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Jmeno)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Prijmeni)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OsobniCislo)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Obec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ulice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CisloDomu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PSC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumNastup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlatovaTrida)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Smena)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.CasPrihlaseni)
+        </td>*@
+    @*<td>
+            @Html.DisplayFor(modelItem => item.C_USER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_USER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_DATE)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.UserName)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.PasswordHash)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.STAV_NASLEDUJICI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailConfirmed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecurityStamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TwoFactorEnabled)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LockoutEndDateUtc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LockoutEnabled)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccessFailedCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsConfirmed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PasswordQuestion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PasswordAnswer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivationToken)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.SY_STAV.POPIS)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SY_STAV.STAV)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID })
+    </td>
+</tr>
+    }
+
+</table>
+
+Stránka @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) z @Model.PageCount
+
+
+@*@Html.PagedListPager(
+        Model,
+        page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }),
+        PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "dynamicContent" })
+    )*@
+
+@Html.PagedListPager(
+    Model,
+    page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }),
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+)
+

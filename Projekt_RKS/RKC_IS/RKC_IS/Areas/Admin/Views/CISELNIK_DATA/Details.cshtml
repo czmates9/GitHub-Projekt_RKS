@@ -1,0 +1,155 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.CISELNIK_DATA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CISELNIK_DATA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DOMENA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOMENA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KOD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KOD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.POPIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POPIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PORADI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PORADI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KOD_M)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KOD_M)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TXT1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TXT1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TXT2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TXT2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L_0)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L_0)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L_4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L_4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L_5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L_5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L_6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L_6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L_7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L_7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L_8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L_8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L_9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L_9)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

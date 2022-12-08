@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B96419E-10CE-448B-BA87-B57461B6A5A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RKC_IS.DataAccess</RootNamespace>
+    <AssemblyName>RKC_IS.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.0\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.3\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.3\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interface\IEntity.cs" />
+    <Compile Include="Interface\Repository\IRepositoryBase.cs" />
+    <Compile Include="Logika\StavHelper.cs" />
+    <Compile Include="Logika\StrojHelper.cs" />
+    <Compile Include="Migrations\202004060045231_Migrace.cs" />
+    <Compile Include="Migrations\202004060045231_Migrace.Designer.cs">
+      <DependentUpon>202004060045231_Migrace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004060121330_Migrace_2.cs" />
+    <Compile Include="Migrations\202004060121330_Migrace_2.Designer.cs">
+      <DependentUpon>202004060121330_Migrace_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004060128540_Migrace_3.cs" />
+    <Compile Include="Migrations\202004060128540_Migrace_3.Designer.cs">
+      <DependentUpon>202004060128540_Migrace_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004060141414_Migrace_4.cs" />
+    <Compile Include="Migrations\202004060141414_Migrace_4.Designer.cs">
+      <DependentUpon>202004060141414_Migrace_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004060159157_migraceMyUser.cs" />
+    <Compile Include="Migrations\202004060159157_migraceMyUser.Designer.cs">
+      <DependentUpon>202004060159157_migraceMyUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004060842589_ZalozeniTabulek.cs" />
+    <Compile Include="Migrations\202004060842589_ZalozeniTabulek.Designer.cs">
+      <DependentUpon>202004060842589_ZalozeniTabulek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004060852538_ZalozeniTabulek_2.cs" />
+    <Compile Include="Migrations\202004060852538_ZalozeniTabulek_2.Designer.cs">
+      <DependentUpon>202004060852538_ZalozeniTabulek_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004060902526_ZalozeniTabulek_3.cs" />
+    <Compile Include="Migrations\202004060902526_ZalozeniTabulek_3.Designer.cs">
+      <DependentUpon>202004060902526_ZalozeniTabulek_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004060908593_ZalozeniTabulek_4.cs" />
+    <Compile Include="Migrations\202004060908593_ZalozeniTabulek_4.Designer.cs">
+      <DependentUpon>202004060908593_ZalozeniTabulek_4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004060912554_ZalozeniTabulek_5.cs" />
+    <Compile Include="Migrations\202004060912554_ZalozeniTabulek_5.Designer.cs">
+      <DependentUpon>202004060912554_ZalozeniTabulek_5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004060933322_ZalozeniTabulek_6.cs" />
+    <Compile Include="Migrations\202004060933322_ZalozeniTabulek_6.Designer.cs">
+      <DependentUpon>202004060933322_ZalozeniTabulek_6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004060934504_ZalozeniTabulek_7.cs" />
+    <Compile Include="Migrations\202004060934504_ZalozeniTabulek_7.Designer.cs">
+      <DependentUpon>202004060934504_ZalozeniTabulek_7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004061514445_Odstraneni0.cs" />
+    <Compile Include="Migrations\202004061514445_Odstraneni0.Designer.cs">
+      <DependentUpon>202004061514445_Odstraneni0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004061529095_MapovaniDatabaze.cs" />
+    <Compile Include="Migrations\202004061529095_MapovaniDatabaze.Designer.cs">
+      <DependentUpon>202004061529095_MapovaniDatabaze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004061533341_MapovaniDatabaze2.cs" />
+    <Compile Include="Migrations\202004061533341_MapovaniDatabaze2.Designer.cs">
+      <DependentUpon>202004061533341_MapovaniDatabaze2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\AutoMapping\AP_HISTORIE.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\AspNetRoles.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\AspNetUserClaims.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\AspNetUserLogins.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\AspNetUsers.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\CISELNIK_DATA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\CISELNIK_DEFINICE.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\ESP_LOG.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\FORMA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\FORMA_OPRAVA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\GRUPA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\KONSTANTY.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\MapModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MapModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\MapModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\MapModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MapModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\MATERIAL.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\MEZNI_VZOREK.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\ROLE.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\SESTAVA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\SESTAVA_DEFINICE.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\SMENA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\STROJ.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\STROJ_GRUPA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\STROJ_PARAMETR.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\STROJ_PORUCHA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\STROJ_UDRZBA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\SY_FORMULAR.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\SY_MODUL.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\SY_MODUL_ROLE.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\SY_POLOZKA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\SY_POLOZKA_STAV.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\SY_PRECHOD.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\SY_STAV.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\SY_TABULKA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\USER.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\UserClaim.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\UserLogin.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\USER_GRUPA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\USER_ROLE.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\USER_VZORKOVANI.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\VYROBA_ZAZNAM.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\VZORKOVANI.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\WORKMONITOR.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\ZAKAZKA.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AutoMapping\ZAKAZKA_SAP.cs">
+      <DependentUpon>MapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\KodProRole.cs" />
+    <Compile Include="Model\MyDbContext.cs" />
+    <Compile Include="Model\MyRole.cs" />
+    <Compile Include="Model\MyRoleStore.cs" />
+    <Compile Include="Model\MyUser.cs" />
+    <Compile Include="Model\MyUserClaim.cs" />
+    <Compile Include="Model\MyUserLogin.cs" />
+    <Compile Include="Model\MyUserManager.cs" />
+    <Compile Include="Model\MyUserStore.cs" />
+    <Compile Include="Model\MyUser_Role.cs" />
+    <Compile Include="Model\ViewModel\USERView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Model\AutoMapping\MapModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MapModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\AutoMapping\MapModel.edmx.diagram">
+      <DependentUpon>MapModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202004060045231_Migrace.resx">
+      <DependentUpon>202004060045231_Migrace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060121330_Migrace_2.resx">
+      <DependentUpon>202004060121330_Migrace_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060128540_Migrace_3.resx">
+      <DependentUpon>202004060128540_Migrace_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060141414_Migrace_4.resx">
+      <DependentUpon>202004060141414_Migrace_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060159157_migraceMyUser.resx">
+      <DependentUpon>202004060159157_migraceMyUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060842589_ZalozeniTabulek.resx">
+      <DependentUpon>202004060842589_ZalozeniTabulek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060852538_ZalozeniTabulek_2.resx">
+      <DependentUpon>202004060852538_ZalozeniTabulek_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060902526_ZalozeniTabulek_3.resx">
+      <DependentUpon>202004060902526_ZalozeniTabulek_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060908593_ZalozeniTabulek_4.resx">
+      <DependentUpon>202004060908593_ZalozeniTabulek_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060912554_ZalozeniTabulek_5.resx">
+      <DependentUpon>202004060912554_ZalozeniTabulek_5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060933322_ZalozeniTabulek_6.resx">
+      <DependentUpon>202004060933322_ZalozeniTabulek_6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060934504_ZalozeniTabulek_7.resx">
+      <DependentUpon>202004060934504_ZalozeniTabulek_7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004061514445_Odstraneni0.resx">
+      <DependentUpon>202004061514445_Odstraneni0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004061529095_MapovaniDatabaze.resx">
+      <DependentUpon>202004061529095_MapovaniDatabaze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004061533341_MapovaniDatabaze2.resx">
+      <DependentUpon>202004061533341_MapovaniDatabaze2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\AutoMapping\MapModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MapModel.edmx</DependentUpon>
+      <LastGenOutput>MapModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\AutoMapping\MapModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MapModel.edmx</DependentUpon>
+      <LastGenOutput>MapModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,50 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.USER_ROLE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>USER_ROLE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.L_PLATI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L_PLATI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ROLE.ZKRATKA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ROLE.ZKRATKA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ROLE1.ZKRATKA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ROLE1.ZKRATKA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.ZAOR_organizace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.ZAOR_organizace)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,102 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.USER
+
+@{
+    ViewBag.Title = "Detail uživatele";
+}
+
+    <h2>
+        @Html.DisplayFor(model => model.Jmeno)
+        @Html.DisplayFor(model => model.Prijmeni)
+    </h2>
+
+    <p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Osobní číslo:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OsobniCislo)
+        </dd>
+
+        <br>
+
+        <dt>
+            Login:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            Email:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            Telefon:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <br>
+
+        @*<dt>
+            Umístění:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZAOR_organizace)
+        </dd>*@
+
+
+
+        @*<dt>
+           Obec:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Obec)
+        </dd>
+
+        <dt>
+           Ulice:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ulice)
+        </dd>
+
+        <dt>
+            Číslo domu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CisloDomu)
+        </dd>
+
+        <dt>
+            PSČ:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PSC)
+        </dd>*@
+
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Editovat", "Edit", new { id = Model.ID })*@
+    @Html.ActionLink("Změna hesla", "ChangePassword","Manage")
+</p>
+

@@ -1,0 +1,391 @@
+﻿@model PagedList.IPagedList<RKC_IS.DataAccess.Model.AutoMapping.CISELNIK_DEFINICE>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Číselník-definice";
+}
+
+@*<div id="ajaxContent">
+    </div>
+    <a href="#" onclick="getAjaxContent()">Ajax request</a>
+    <script type="text/javascript">
+        function getAjaxContent() {
+            $(document).ready(function () {
+                $.get('@Url.Action("Index","CISELNIK_DEFINICE")', function (data) {
+                    $("#ajaxContent").html(data);
+                });
+            });
+        }
+    </script>*@
+
+<h2>Číselník-definice</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "CISELNIK_DEFINICE", FormMethod.Get))
+{
+    <p>
+        Hledej podle DOMENA: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DOMENA)*@
+
+            @*@Html.ActionLink("DOMENA", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+            @Ajax.ActionLink("DOMENA", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.NAZEV_CISELNIKU)*@
+
+            @*@Html.ActionLink("NAZEV_CISELNIKU", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })*@
+            @Ajax.ActionLink("KOD", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.POPIS)*@
+            POPIS
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DOMENA_M)*@
+            DOMENA_M
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.MASKA)*@
+            MASKA
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.KOD_VYZNAM)*@
+            KOD_VYZNAM
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.KOD_M_VYZNAM)*@
+            KOD_M_VYZNAM
+        </th>
+        <th>
+            TXT1
+        </th>
+        <th>
+            TXT2
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.L0_VYZNAM)*@
+            L0_VYZNAM
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.L1_VYZNAM)*@
+            L1_VYZNAM
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.L2_VYZNAM)*@
+            L2_VYZNAM
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.L3_VYZNAM)*@
+            L3_VYZNAM
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.L4_VYZNAM)*@
+            L4_VYZNAM
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.L5_VYZNAM)*@
+            L5_VYZNAM
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.L6_VYZNAM)*@
+            L6_VYZNAM
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.L7_VYZNAM)*@
+            L7_VYZNAM
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.L8_VYZNAM)*@
+            L8_VYZNAM
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.L9_VYZNAM)*@
+            L9_VYZNAM
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.DOMENA)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NAZEV_CISELNIKU)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.POPIS)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DOMENA_M)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MASKA)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KOD_VYZNAM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KOD_M_VYZNAM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TXT1)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TXT2)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.L0_VYZNAM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.L1_VYZNAM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.L2_VYZNAM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.L3_VYZNAM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.L4_VYZNAM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.L5_VYZNAM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.L6_VYZNAM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.L7_VYZNAM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.L8_VYZNAM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.L9_VYZNAM)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
+    }
+
+</table>
+
+<br />
+Stránka @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) z @Model.PageCount
+
+@Html.PagedListPager(
+    Model,
+    page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }),
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model PagedList.IPagedList<RKC_IS.DataAccess.Model.AutoMapping.CISELNIK_DEFINICE>
+    @using PagedList.Mvc;
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    @{
+        ViewBag.Title = "Číselník-definice";
+    }
+
+    <div id="ajaxContent">
+        </div>
+        <a href="#" onclick="getAjaxContent()">Ajax request</a>
+        <script type="text/javascript">
+            function getAjaxContent() {
+                $(document).ready(function () {
+                    $.get('@Url.Action("Index","CISELNIK_DEFINICE")', function (data) {
+                        $("#ajaxContent").html(data);
+                    });
+                });
+            }
+        </script>
+
+    <h2>Číselník-definice</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    @using (Html.BeginForm("Index", "CISELNIK_DEFINICE", FormMethod.Get))
+    {
+        <p>
+            Hledej podle DOMENA: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <input type="submit" value="Search" />
+        </p>
+    }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DOMENA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NAZEV_CISELNIKU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.POPIS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOMENA_M)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MASKA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KOD_VYZNAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KOD_M_VYZNAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TXT1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TXT2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L0_VYZNAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L1_VYZNAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L2_VYZNAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L3_VYZNAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L4_VYZNAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L5_VYZNAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L6_VYZNAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L7_VYZNAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L8_VYZNAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L9_VYZNAM)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DOMENA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NAZEV_CISELNIKU)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.POPIS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DOMENA_M)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MASKA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KOD_VYZNAM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KOD_M_VYZNAM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TXT1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TXT2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.L0_VYZNAM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.L1_VYZNAM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.L2_VYZNAM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.L3_VYZNAM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.L4_VYZNAM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.L5_VYZNAM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.L6_VYZNAM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.L7_VYZNAM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.L8_VYZNAM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.L9_VYZNAM)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>*@

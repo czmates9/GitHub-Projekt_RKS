@@ -1,0 +1,145 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.VYROBA_ZAZNAM
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/UserIN/Views/Shared/_LayoutLisovna.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>VYROBA_ZAZNAM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CasPrace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CasPrace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Poznamka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Poznamka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeEnd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeEnd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STAV_NASLEDUJICI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STAV_NASLEDUJICI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SY_STAV.TABULKA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SY_STAV.TABULKA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER.ZAOR_organizace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER.ZAOR_organizace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZAKAZKA.Oznaceni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZAKAZKA.Oznaceni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VYROBA_ZAZNAM2.Poznamka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VYROBA_ZAZNAM2.Poznamka)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

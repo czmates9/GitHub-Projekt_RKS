@@ -1,0 +1,102 @@
+﻿@model PagedList.IPagedList<RKC_IS.DataAccess.Model.AutoMapping.VYROBA_ZAZNAM>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "seznam vyrobních výkazů na odpis do SAP";
+    Layout = "~/Areas/UserIN/Views/Shared/_LayoutLisovna.cshtml";
+    AjaxOptions options = new AjaxOptions
+    {
+        UpdateTargetId = "searchResult",
+        Confirm = "Are you sure to start search?",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "dynamicContent"
+    };
+}
+
+    <h2>seznam vyrobních výkazů na odpis do SAP</h2>
+
+
+@*@using (Html.BeginForm("SeznamVyrobaku", "Lisovna", FormMethod.Get))
+{
+    <p>
+        Hledej podle čísla zakázky: @Html.TextBox("SearchStringDomena", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}*@
+
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.KOD)*@
+
+            @*@Html.ActionLink("KOD", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })*@
+
+            @Ajax.ActionLink("STAV", "SeznamVyrobaku", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+
+        </th>
+        <th>
+          Popis stavu
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DOMENA)*@
+
+            @*@Html.ActionLink("DOMENA", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+            @Ajax.ActionLink("Čislo zakázky", "SeznamVyrobaku", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+
+        </th>
+
+        <th>
+            OK
+        </th>
+        <th>
+            NOK
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.SY_STAV.STAV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SY_STAV.POPIS)
+    </td>
+    <td><a href="@Url.Action("DetailVyrobaku", "Lisovna", new { id_zakazka = item.ID_ZAKAZKA})">@item.ZAKAZKA.CisloZakazka</a></td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OK)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NOK)
+    </td>
+    @if (User.IsInRole("admin") || User.IsInRole("logistika"))
+    {
+        <td>@Html.ActionLink("Zaznamenáno v SAP", "ZaznamSAP", "Lisovna", new { area = "UserIN", id_zakazka = item.ID_ZAKAZKA }, new { @class = "btn btn-success" })</td>
+    }
+
+
+</tr>
+     }
+
+    </table>
+
+<br />
+
+        Stránka @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) z @Model.PageCount
+
+
+@*@Html.PagedListPager(
+        Model,
+        page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }),
+        PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "dynamicContent" })
+    )*@
+
+@Html.PagedListPager(
+    Model,
+    page => Url.Action("SeznamVyrobaku", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }),
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+)
+
+
+

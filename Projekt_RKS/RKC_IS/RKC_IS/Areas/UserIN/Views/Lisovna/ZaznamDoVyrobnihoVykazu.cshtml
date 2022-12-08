@@ -1,0 +1,194 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.VYROBA_ZAZNAM
+
+@{
+    ViewBag.Title = "Záznam do výrobního výkazu";
+    Layout = "~/Areas/UserIN/Views/Shared/_LayoutLisovna.cshtml";
+}
+
+<h2>Záznam do výrobního výkazu</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.ID_M, "ID_M", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("ID_M", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ID_M, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        @*<div class="form-group">
+                @Html.Label("Číslo zakázky", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("ID_ZAKAZKA", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ID_ZAKAZKA, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+        <div class="form-group">
+            <div class="col-md-5">
+                <h4 style="background:yellow"> @Html.Raw(ViewBag.zakazkaCisloZobrazení)</h4>
+            </div>
+        </div>
+
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.ID_USER, "ID_USER", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("ID_USER", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ID_USER, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.CasPrace, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CasPrace, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CasPrace, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OK, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OK, new { htmlAttributes = new { @class = "form-control" } }) cílový počet OK: @Html.Raw(ViewBag.PocetKusuZobrazeni) zbývá:@Html.Raw(ViewBag.ZobrazeniZbyvaOK)
+                @Html.ValidationMessageFor(model => model.OK, "", new { @class = "text-danger" })
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NOK, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NOK, new { htmlAttributes = new { @class = "form-control" } }) Odepsaných NOK: @Html.Raw(ViewBag.ZapsanychNOK)
+                @Html.ValidationMessageFor(model => model.NOK, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Poznámka k NOK", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Poznamka, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Poznamka, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Začátek", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TimeStart, new { htmlAttributes = new { @class = "form-control", placeholder = DateTime.Today } })
+                @Html.ValidationMessageFor(model => model.TimeStart, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Konec", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TimeEnd, new { htmlAttributes = new { @class = "form-control", placeholder = DateTime.Today } })
+                @Html.ValidationMessageFor(model => model.TimeEnd, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.C_USER, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.C_USER, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.C_USER, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.C_DATE, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.C_DATE, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.C_DATE, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.M_USER, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.M_USER, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.M_USER, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.M_DATE, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.M_DATE, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.M_DATE, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.STAV, "STAV", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("STAV", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.STAV, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.STAV_NASLEDUJICI, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.STAV_NASLEDUJICI, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.STAV_NASLEDUJICI, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+
+        <div class="form-group">
+            @Html.Label("Zakázka ukončena", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.CheckBox("CheckZakazkaUkonceno", (bool)(ViewBag.CekniTo))*@
+
+                @*@Html.CheckBoxFor(model => model.IsSelected)*@
+
+                @*@Html.CheckBoxFor(x => x.IsSelected.Value)*@
+
+                @*@Html.EditorFor(x => x.IsSelected)*@
+
+                @Html.DropDownListFor(m => m.IsSelected, new SelectList(
+          new[] {
+              new { Value = "", Text = "-- Vyber ANO nebo NE --" },
+              new { Value = "true", Text = "ANO" },
+              new { Value = "false", Text = "NE" },
+          },
+          "Value",
+          "Text"
+      ), new { @class = "form-control" })
+
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Odeslat" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@*<div>
+        @Html.ActionLink("Zpět na seznam výrobních výkazů", "Index")
+    </div>*@
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,350 @@
+﻿@model PagedList.IPagedList<RKC_IS.DataAccess.Model.AutoMapping.CISELNIK_DATA>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Číselník-data";
+
+    AjaxOptions options = new AjaxOptions
+    {
+        UpdateTargetId = "searchResult",
+        Confirm = "Are you sure to start search?",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "dynamicContent"
+    };
+}
+
+
+
+
+
+
+
+<h2>Číselník-data</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "CISELNIK_DATA", FormMethod.Get))
+{
+    <p>
+        Hledej podle DOMENA: @Html.TextBox("SearchStringDomena", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+@*@Html.Action("SearchPeople", new { keyword = "" })
+    @using (Ajax.BeginForm("SearchPeople", options))
+    {
+        <div id="divLoading" style="color: red; width: 200px; background-color: yellow; fontsize: larger; display: none; position: absolute;">
+            Loading ....
+        </div>
+        <div>
+            @Html.TextBox("keyword")
+            <button type="submit">Search</button>
+        </div>
+    }*@
+
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DOMENA)*@
+
+            @*@Html.ActionLink("DOMENA", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+            @Ajax.ActionLink("DOMENA", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.KOD)*@
+
+            @*@Html.ActionLink("KOD", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })*@
+
+            @Ajax.ActionLink("KOD", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }, new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.POPIS)*@
+            POPIS
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.PORADI)
+            PORADI
+        </th>*@
+        <th>
+            @*@Html.DisplayNameFor(model => model.KOD_M)*@
+            KOD_M
+        </th>
+        <th>
+            TXT1
+        </th>
+        <th>
+            TXT2
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.L0_VYZNAM)
+            L0_VYZNAM
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.L1_VYZNAM)
+            L1_VYZNAM
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.L2_VYZNAM)
+            L2_VYZNAM
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.L3_VYZNAM)
+            L3_VYZNAM
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.L4_VYZNAM)
+            L4_VYZNAM
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.L5_VYZNAM)
+            L5_VYZNAM
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.L6_VYZNAM)
+            L6_VYZNAM
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.L7_VYZNAM)
+            L7_VYZNAM
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.L8_VYZNAM)
+            L8_VYZNAM
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.L9_VYZNAM)
+            L9_VYZNAM
+        </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.DOMENA)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KOD)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.POPIS)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.PORADI)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.KOD_M)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TXT1)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TXT2)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.L_0)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.L_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.L_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.L_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.L_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.L_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.L_6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.L_7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.L_8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.L_9)
+        </td>*@
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
+    }
+
+</table>
+
+<br />
+Stránka @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) z @Model.PageCount
+
+
+@*@Html.PagedListPager(
+        Model,
+        page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }),
+        PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "dynamicContent" })
+    )*@
+
+@Html.PagedListPager(
+    Model,
+    page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }),
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })
+)
+
+
+
+@*@Ajax.ActionLink(Model.PageNumber.ToString(), "Index",
+    new { page = Model.PageNumber, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter },
+    new AjaxOptions() { InsertionMode = InsertionMode.Replace, UpdateTargetId = "dynamicContent" })*@
+
+
+
+
+
+
+
+
+
+
+@*@model IEnumerable<RKC_IS.DataAccess.Model.AutoMapping.CISELNIK_DATA>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DOMENA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KOD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.POPIS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PORADI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KOD_M)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TXT1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TXT2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L_0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L_3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L_4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L_5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L_6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L_7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L_8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.L_9)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOMENA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KOD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.POPIS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PORADI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KOD_M)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TXT1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TXT2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.L_0)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.L_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.L_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.L_3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.L_4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.L_5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.L_6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.L_7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.L_8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.L_9)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+    }
+
+    </table>*@

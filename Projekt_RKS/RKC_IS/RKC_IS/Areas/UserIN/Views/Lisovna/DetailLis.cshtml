@@ -1,0 +1,443 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.STROJ
+@{
+    ViewBag.Title = Model.Nazev +" "+ Model.Cislo;
+    Layout = "~/Areas/UserIN/Views/Shared/_LayoutLisovna.cshtml";
+}
+
+
+<style type="text/css">
+    .tabulka1 {
+        Width: 80%;
+        height: 8%;
+        border-style: solid;
+        border-width: 1px;
+        position: relative;
+        top: 10%;
+        left: 10%;
+        cellspacing: 0;
+        border-collapse: collapse;
+        border-radius: 15px;
+        width: 98%;
+        left: 1%;
+    }
+
+    .tabulka2 {
+        Width: 100%;
+        height: 100%;
+        border-style: solid;
+        border-width: 1px;
+        position: relative;
+        top: 0%;
+        left: 0%;
+        text-align: center;
+        font-size: calc(4px + (12 - 4) * ((100vw - 300px) / (1600 - 300)));
+    }
+
+    .tabulka3 {
+        Width: 80%;
+        height: 30%;
+        border-style: solid;
+        border-width: 1px;
+        position: relative;
+        top: 20%;
+        left: 10%;
+        text-align: center;
+        font-size: calc(4px + (12 - 4) * ((100vw - 300px) / (1600 - 300)));
+    }
+
+    .auto-style1 {
+        font-size: calc(6px + (20 - 6) * ((100vw - 300px) / (1600 - 300)));
+        font-style: oblique;
+        text-align: center;
+        position: relative;
+        top: 6%;
+        left: 50%;
+    }
+
+    caption {
+        background-color: lightgrey;
+        color: black;
+        font-weight: bold;
+        border-radius: 3px;
+    }
+</style>
+
+
+
+<div id="ContentPlaceHolder1_Panel8" class="table-bordered" style="border-radius:15px; width:80%;position:relative; left:10%; background-color:aliceblue">
+
+    <span id="ContentPlaceHolder1_Textlis" class="auto-style1">@Html.DisplayFor(model => model.Nazev) @Html.DisplayFor(model => model.Cislo)</span>
+    <table id="ContentPlaceHolder1_DataList1" class="tabulka1">
+        <tbody>
+            <tr>
+                <td>
+
+
+                    <table id="tabulka1" class="tabulka2" border="1" style="border-radius:15px">
+                        <tbody>
+                            <tr>
+                                <td>Číslo lisu</td>
+                                <td>Název lisu</td>
+                                <td>Nákladové středisko</td>
+                                <td>Středisko</td>
+                                <td>Typ lisu</td>
+                                <td>Kategorie</td>
+                                <td>Rok Výroby</td>
+                                <td>Robot</td>
+                                <td>Balička</td>
+                                <td>Dopravník</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span id="ContentPlaceHolder1_DataList1_Label4_0">@Html.DisplayFor(model => model.Cislo)       </span>
+                                </td>
+                                <td>
+                                    <span id="ContentPlaceHolder1_DataList1_Label5_0">@Html.DisplayFor(model => model.Nazev)            </span>
+                                </td>
+                                <td>
+                                    <span id="ContentPlaceHolder1_DataList1_Label6_0"> @Html.Action("CiselnikPopis", new { KODstroje = Model.ZANS_NaklStr })      </span>
+                                </td>
+                                <td>
+                                    <span id="ContentPlaceHolder1_DataList1_Label7_0"> -  </span>
+                                </td>
+                                <td>
+                                    <span id="ContentPlaceHolder1_DataList1_Label8_0"> @Html.Action("CiselnikPopis", new { KODstroje = Model.ZATS_Typ })         </span>
+                                </td>
+                                <td>
+                                    <span id="ContentPlaceHolder1_DataList1_Label9_0"> -      </span>
+                                </td>
+                                <td>
+                                    <span id="ContentPlaceHolder1_DataList1_Label10_0">@Html.Action("StrojRokVyroby", new { DatumStroj = Model.DatumVyroby })     </span>
+                                </td>
+                                <td>
+                                    <span id="ContentPlaceHolder1_DataList1_Label11_0"> -         </span>
+                                </td>
+                                <td>
+                                    <span id="ContentPlaceHolder1_DataList1_Label12_0"> -      </span>
+                                </td>
+                                <td>
+                                    <span id="ContentPlaceHolder1_DataList1_Label13_0"> -      </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="tabulka3" border="1" style="width:98%; left:1%">
+        <tbody>
+            <tr style="height:300%;font-size: calc(6px + (20 - 6) * ((100vw - 300px) / (1600 - 300)))">
+                <td colspan="5" style="width:60%">Procento chodu lisu za tuto směnu</td>
+                <td colspan="6">
+                    <span id="ContentPlaceHolder1_ProcentoChodu">@Html.Action("ChodProcent_stroj", new { start = "2020-05-04 06:00:00.000", end = DateTime.Now, stroj = Model.ID })%</span>
+                </td>
+            </tr>
+            <tr style="height:300%;font-size: calc(6px + (20 - 6) * ((100vw - 300px) / (1600 - 300)))">
+                <td colspan="5" style="width:60%">Počet taktů za tuto směnu</td>
+                <td colspan="6">
+                    <span id="ContentPlaceHolder1_PocetTaktu">@Html.Action("PocetTaktu_stroj", new { start = "2020-05-04 06:00:00.000", end = DateTime.Now, stroj = Model.ID })</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+</div>
+
+<br />
+@*-----------------------------------------------------------------2222222222222222222-----------------------------------------------------------------------------*@
+<div id="ContentPlaceHolder1_Panel1" class="table-bordered" style="border-radius:15px; width:80%;position:relative; left:10%; background-color:Lavender;">
+
+    <br>
+    <span id="ContentPlaceHolder1_Label2" style="position:relative;left:0.5%;font-size: calc(6px + (14 - 6) * ((100vw - 300px) / (1600 - 300)));color: black;font-weight: bold">Výroba</span>
+    <br>
+    <br>
+    <div id="ContentPlaceHolder1_Panel4" style="border-radius:5px; width:99%;position:relative; left:0.5%; background-color:PaleGreen">
+
+        <br>
+        <span id="ContentPlaceHolder1_Label14" style="position:relative;left:0.5%;font-size: calc(6px + (12 - 6) * ((100vw - 300px) / (1600 - 300)));color: black;font-weight: bold">Aktuální zakázky</span>
+        <br>
+
+    </div>
+    <div>
+        <table class="table-bordered table-hover caption" cellspacing="0" rules="all" border="1" id="ContentPlaceHolder1_GridView1" style="border-collapse:collapse;position:relative; border-radius: 3px;  width:99%; left:0.5%; font-size: calc(6px + (11 - 6) * ((100vw - 300px) / (1600 - 300)))">
+            <tbody>
+                <tr>
+                    <th scope="col">Číslo zakázky</th>
+                    <th scope="col">Materiál</th>
+                    <th scope="col">Označení</th>
+                    <th scope="col">Množství [ks]</th>
+                    <th scope="col">Termín</th>
+                    <th scope="col">CT SAP</th>
+                    <th scope="col">Cas výroby</th>
+                    <th scope="col">Forma</th>
+                    <th scope="col">Poznamka</th>
+                    <th scope="col"></th>
+                </tr>
+                @foreach (var zakazkaNaStroji in ViewBag.SeznamZakazekNaStroji)
+                {
+
+                    <tr>
+                        <td><a href="@Url.Action("DetailVyrobaku", "Lisovna", new { id_zakazka = zakazkaNaStroji.ID})">@zakazkaNaStroji.CisloZakazka</a></td>
+                        <td>----</td>
+                        <td>@zakazkaNaStroji.Oznaceni</td>
+                        <td>@zakazkaNaStroji.PlanovaneMnozstviNa</td>
+                        <td>@zakazkaNaStroji.CyklusCas</td>
+                        <td>@zakazkaNaStroji.DobaPripravaVyroba</td>
+                        <td>@zakazkaNaStroji.KonecnyT</td>
+                        <td><a href="@Url.Action("Details", "FORMA", new { id = zakazkaNaStroji.FORMA.ID})">@zakazkaNaStroji.FORMA.ZAFO_Forma</a></td>
+                        <td>@zakazkaNaStroji.PoznamkaNaVP</td>
+                        @*<td>@Html.ActionLink("Vložit na stroj", "NasazeniZakazkaNaStroj","Lisovna", new { area="UserIN", @class="btn btn-primary"})</td>*@
+                        @if (User.IsInRole("admin") || User.IsInRole("operator"))
+                        {
+                            @*<td>@Html.ActionLink("Vložit na stroj", "NasazeniZakazkaNaStroj", "Lisovna", new { area = "UserIN", @class = "btn btn-primary", id = zakazka.ID })</td>*@
+                            <td>@Html.ActionLink("Odepsat výrobu", "ZaznamDoVyrobnihoVykazu", "Lisovna", new { area = "UserIN", id = zakazkaNaStroji.ID }, new { @class = "btn btn-primary" })</td>
+                        }
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <div id="ContentPlaceHolder1_Panel5" style="border-radius:5px; width:99%;position:relative; left:0.5%; background-color:Gold">
+
+        <br>
+        <span id="ContentPlaceHolder1_Label15" style="position:relative;left:0.5%;font-size: calc(6px + (12 - 6) * ((100vw - 300px) / (1600 - 300)));color: black;font-weight: bold">Plánované zakázky</span>
+        <br>
+
+    </div>
+    <div>
+        <table class="table-bordered table-hover caption" cellspacing="0" rules="all" border="1" id="ContentPlaceHolder1_ctl00" style="border-collapse:collapse;position:relative; border-radius: 3px;  width:99%; left:0.5%; font-size: calc(6px + (11 - 6) * ((100vw - 300px) / (1600 - 300)))">
+            <tbody>
+                <tr>
+                    <th scope="col">Číslo zakázky</th>
+                    <th scope="col">Materiál</th>
+                    <th scope="col">Označení</th>
+                    <th scope="col">Množství [ks]</th>
+                    <th scope="col">Termín</th>
+                    <th scope="col">CT SAP</th>
+                    <th scope="col">Cas výroby</th>
+                    <th scope="col">Forma</th>
+                    <th scope="col">Poznamka</th>
+                    <th scope="col"></th>
+                </tr>
+                @foreach (var zakazka in ViewBag.SeznamZakazek)
+                {
+                    
+            <tr>
+                <td><a href="@Url.Action("Details", "ZAKAZKA", new { id = zakazka.ID})">@zakazka.CisloZakazka</a></td>
+                <td>----</td>
+                <td>@zakazka.Oznaceni</td>
+                <td>@zakazka.PlanovaneMnozstviNa</td>
+                <td>@zakazka.CyklusCas</td>
+                <td>@zakazka.DobaPripravaVyroba</td>
+                <td>@zakazka.KonecnyT</td>
+                <td><a href="@Url.Action("Details", "FORMA", new { id = zakazka.FORMA.ID})">@zakazka.FORMA.ZAFO_Forma</a></td>
+                <td>@zakazka.PoznamkaNaVP</td>
+                @*<td>@Html.ActionLink("Vložit na stroj", "NasazeniZakazkaNaStroj","Lisovna", new { area="UserIN", @class="btn btn-primary"})</td>*@
+                @if (User.IsInRole("admin") || User.IsInRole("serizovac"))
+                {
+                    @*<td>@Html.ActionLink("Vložit na stroj", "NasazeniZakazkaNaStroj", "Lisovna", new { area = "UserIN", @class = "btn btn-primary", id = zakazka.ID })</td>*@
+                    <td>@Html.ActionLink("Vložit na stroj", "NasazeniZakazkaNaStroj", "Lisovna", new { area = "UserIN", id = zakazka.ID }, new { @class = "btn btn-primary" })</td>
+                }
+
+
+            </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <br>
+    
+    <div id="ContentPlaceHolder1_Panel6" style="border-radius:5px; width:99%;position:relative; left:0.5%; background-color:PaleVioletRed">
+
+        <br>
+        <span id="ContentPlaceHolder1_Label16" style="position:relative;left:0.5%;font-size: calc(6px + (12 - 6) * ((100vw - 300px) / (1600 - 300)));color: black;font-weight: bold">Ukončené zakázky</span>
+
+        @*<span style="position:relative;right:0.5%;font-size: calc(6px + (12 - 6) * ((100vw - 300px) / (1600 - 300)));color: black;font-weight: bold">ARCHIV</span>*@
+        <br>
+
+    </div>
+    <div>
+        <table class="table-bordered table-hover caption" cellspacing="0" rules="all" border="1" id="ContentPlaceHolder1_GridView2" style="border-collapse:collapse;position:relative; border-radius: 3px;  width:99%; left:0.5%; font-size: calc(6px + (11 - 6) * ((100vw - 300px) / (1600 - 300)))">
+            <tbody>
+                <tr>
+                    <th scope="col">Číslo zakázky</th>
+                    <th scope="col">Materiál</th>
+                    <th scope="col">Označení</th>
+                    <th scope="col">Množství [ks]</th>
+                    <th scope="col">Termín</th>
+                    <th scope="col">CT SAP</th>
+                    <th scope="col">Cas výroby</th>
+                    <th scope="col">Forma</th>
+                    <th scope="col">Poznamka</th>
+                    <th scope="col"></th>
+                </tr>
+                @*@foreach (var zakazkaUkoncena in ViewBag.VypisSeznamHlavnichVyrobaku)
+        {
+
+            <tr>
+                <td><a href="@Url.Action("DetailVyrobaku", "Lisovna", new { id = zakazkaUkoncena.ID})">@zakazkaUkoncena.CisloZakazka</a></td>
+                <td>----</td>
+                <td>@zakazkaUkoncena.Oznaceni</td>
+                <td>@zakazkaUkoncena.PlanovaneMnozstviNa</td>
+                <td>@zakazkaUkoncena.CyklusCas</td>
+                <td>@zakazkaUkoncena.DobaPripravaVyroba</td>
+                <td>@zakazkaUkoncena.KonecnyT</td>
+                <td><a href="@Url.Action("Details", "FORMA", new { id = zakazkaUkoncena.FORMA.ID})">@zakazkaUkoncena.FORMA.ZAFO_Forma</a></td>
+                <td>@zakazkaUkoncena.PoznamkaNaVP</td>
+                @if (User.IsInRole("admin") || User.IsInRole("logistika"))
+                {
+                    <td>@Html.ActionLink("Odepsáno na SAP", "VPZakazkaSeznam_00", "Lisovna", new { area = "UserIN", id_zakazka = zakazkaUkoncena.ID }, new { @class = "btn btn-primary" })</td>
+                }
+
+
+            </tr>
+        }*@
+
+                @foreach (var zakazkaUkoncena in ViewBag.VypisSeznamHlavnichVyrobaku)
+                {
+
+                    <tr>
+                        <td><a href="@Url.Action("DetailVyrobaku", "Lisovna", new { id_zakazka = zakazkaUkoncena.ZAKAZKA.ID})">@zakazkaUkoncena.ZAKAZKA.CisloZakazka</a></td>
+                        <td>----</td>
+                        <td>@zakazkaUkoncena.ZAKAZKA.Oznaceni</td>
+                        <td>@zakazkaUkoncena.ZAKAZKA.PlanovaneMnozstviNa</td>
+                        <td>@zakazkaUkoncena.ZAKAZKA.CyklusCas</td>
+                        <td>@zakazkaUkoncena.ZAKAZKA.DobaPripravaVyroba</td>
+                        <td>@zakazkaUkoncena.ZAKAZKA.KonecnyT</td>
+                        <td><a href="@Url.Action("Details", "FORMA", new { id = zakazkaUkoncena.ZAKAZKA.FORMA.ID})">@zakazkaUkoncena.ZAKAZKA.FORMA.ZAFO_Forma</a></td>
+                        <td>@zakazkaUkoncena.ZAKAZKA.PoznamkaNaVP</td>
+                        @if (User.IsInRole("admin") || User.IsInRole("logistika"))
+                        {
+                            <td>@Html.ActionLink("Odepsáno na SAP", "VPZakazkaSeznam_00", "Lisovna", new { area = "UserIN", id_zakazka = zakazkaUkoncena.ZAKAZKA.ID }, new { @class = "btn btn-primary" })</td>
+                        }
+
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+</div>
+<br />
+<br />
+
+@*---3333333333333333333333333333333333333333333333333333333--*@
+@*<div id="ContentPlaceHolder1_Panel2" style="border-radius:15px; width:80%;position:relative; left:10%; background-color:pink">
+
+    <br>
+    <span id="ContentPlaceHolder1_Label3" style="position:relative;left:0.5%;font-size: calc(6px + (14 - 6) * ((100vw - 300px) / (1600 - 300)));color: black;font-weight: bold">Mezní vzorky pro danou výrobu</span>
+    <br>
+    <br>
+    <br>
+</div>
+
+<br />
+<br />*@
+@*---------------------------------444444444444444444444444444444444444444-----------------------------------*@
+@*<div id="ContentPlaceHolder1_Panel3" style="border-radius:15px; width:80%;position:relative; left:10%; background-color:Moccasin">
+
+    <br>
+    <span id="ContentPlaceHolder1_Label1" style="position:relative;left:0.5%;font-size: calc(6px + (14 - 6) * ((100vw - 300px) / (1600 - 300)));color: black;font-weight: bold">Provozní deník stroje</span>
+    <br>
+    <span id="ContentPlaceHolder1_Label17" style="position:relative;left:0.5%;font-size: calc(6px + (12 - 6) * ((100vw - 300px) / (1600 - 300)));color: black;font-weight: bold">Údržba</span>
+    <br>
+    <div>
+        <table class="table-bordered table-hover" cellspacing="0" rules="all" border="1" id="ContentPlaceHolder1_GridView5" style="border-collapse:collapse;position:relative; width:99%; left:0.5%; font-size: calc(6px + (11 - 6) * ((100vw - 300px) / (1600 - 300)))">
+            <tbody>
+                <tr>
+                    <th scope="col">stroj</th>
+                    <th scope="col">popisUdrzby</th>
+                    <th scope="col">datum</th>
+                    <th scope="col">provedl</th>
+                </tr>
+                <tr>
+                    <td style="width:20%;">03 Arburg 200t + robot Wittmann + dopr                      </td>
+                    <td style="width:60%;">Pravidelná údržba + údržba robota (28.8.19)                                                                                                                                                             </td>
+                    <td style="width:10%;">03. 09. 2019 07:36:43                   </td>
+                    <td style="width:10%;">cermak                                  </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <span id="ContentPlaceHolder1_Label18" style="position:relative;left:0.5%;font-size: calc(6px + (12 - 6) * ((100vw - 300px) / (1600 - 300)));color: black;font-weight: bold">Poruchy</span>
+    <br>
+    <div>
+        <table class="table-bordered table-hover" cellspacing="0" rules="all" border="1" id="ContentPlaceHolder1_GridView4" style="border-collapse:collapse;position:relative; width:99%; left:0.5%; font-size: calc(6px + (11 - 6) * ((100vw - 300px) / (1600 - 300)))">
+            <tbody>
+                <tr>
+                    <th scope="col">datum</th>
+                    <th scope="col">zadal</th>
+                    <th scope="col">stroj</th>
+                    <th scope="col">Kategorie</th>
+                    <th scope="col">popisProblemu</th>
+                    <th scope="col">Vyresil</th>
+                    <th scope="col">Vyreseno</th>
+                    <th scope="col">DatumVyreseni</th>
+                    <th scope="col">Reseni</th>
+                    <th scope="col">Foto1</th>
+                    <th scope="col">Foto2</th>
+                    <th scope="col">Foto3</th>
+                </tr>
+                <tr>
+                    <td>04. 10. 2019 08:25:06         </td>
+                    <td>Zelenák                       </td>
+                    <td>03 Arburg 200t + robot Wittmann + dopr            </td>
+                    <td>Lis                           </td>
+                    <td>Porucha robota ( vodící řemen osy Z je popraskaný)                                                                                                                                                      </td>
+                    <td>navratil  </td>
+                    <td>Ano       </td>
+                    <td>15. 10. 2019 12:04:21         </td>
+                    <td>Nový řemen osy Z                                                                                    </td>
+                    <td>
+                        <input type="image" name="ctl00$ContentPlaceHolder1$GridView4$ctl02$ImageButton2" id="ContentPlaceHolder1_GridView4_ImageButton2_0" src="%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20" onclick="return LoadDiv(this.src);" style="width:150px;cursor: pointer">
+                    </td>
+                    <td>
+                        <input type="image" name="ctl00$ContentPlaceHolder1$GridView4$ctl02$ImageButton3" id="ContentPlaceHolder1_GridView4_ImageButton3_0" src="%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20" onclick="return LoadDiv(this.src);" style="width:150px;cursor: pointer">
+                    </td>
+                    <td>
+                        <input type="image" name="ctl00$ContentPlaceHolder1$GridView4$ctl02$ImageButton4" id="ContentPlaceHolder1_GridView4_ImageButton4_0" src="%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20" onclick="return LoadDiv(this.src);" style="width:150px;cursor: pointer">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+</div>*@
+
+
+@*-----------------------------------------55555555555555555555555555555555555555555-------------------------*@
+<div class="table-bordered" style="border-radius:15px; position:absolute; top:70px;left:1%; width:10%; background-color:azure">
+
+    <br>
+
+    <a href="@Url.Action("Index", "Lisovna")">
+        <img style="width:98%" src="@Url.Content("~/Feature/Images/Hala_button.jpg")" />
+    </a>
+
+    <br>
+    @*<input type="submit" name="ctl00$ContentPlaceHolder1$KrabList" value="Krabicový lístek" id="ContentPlaceHolder1_KrabList" class="btn btn-primary" style="font-size:90%;height:30px; width:98%; position:relative;left:1%">
+    <input type="submit" name="ctl00$ContentPlaceHolder1$PoruchaStroj" value="Porucha stroje" id="ContentPlaceHolder1_PoruchaStroj" class="btn btn-danger" style="font-size:90%;height:30px; width:98%; position:relative;left:1%">
+    <input type="submit" name="ctl00$ContentPlaceHolder1$ZakazkaButton" value="Zadat zakázku" id="ContentPlaceHolder1_ZakazkaButton" class="btn btn-success" style="font-size:90%;height:30px; width:98%; position:relative;left:1%">*@
+    @Html.ActionLink("zakázky ukončené", "ArchivUkonceneZakazky", "Lisovna", new { area = "UserIN", id_stroj = Model.ID }, new { @class = "btn btn-default" })
+  
+    <br>
+    <br>
+
+</div>
+
+
+

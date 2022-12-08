@@ -1,0 +1,144 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.FORMA
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>FORMA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ZAFO_Forma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZAFO_Forma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZAVY_Vyrobce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZAVY_Vyrobce)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PocetKavit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PocetKavit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CyklusCas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CyklusCas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RokVyroby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RokVyroby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Umisteni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Umisteni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hmotnost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hmotnost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumZadani)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumZadani)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STAV_NASLEDUJICI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STAV_NASLEDUJICI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PocetVP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PocetVP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SY_STAV.TABULKA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SY_STAV.TABULKA)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

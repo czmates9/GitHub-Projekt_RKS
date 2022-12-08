@@ -1,0 +1,265 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.ZAKAZKA
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/UserIN/Views/Shared/_LayoutLisovna.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ZAKAZKA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CisloZakazka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CisloZakazka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oznaceni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oznaceni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NazevProces)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazevProces)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlanovaneMnozstviNa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlanovaneMnozstviNa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VyrobenoZahlaseno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VyrobenoZahlaseno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZbyvajiciMnozstvi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZbyvajiciMnozstvi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hodnota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hodnota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KonecnyT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KonecnyT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumNasazeni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumNasazeni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nasobnost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nasobnost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CyklusCas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CyklusCas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DobaPriprava)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DobaPriprava)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DobaVyroba)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DobaVyroba)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DobaPripravaVyroba)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DobaPripravaVyroba)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Priorita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Priorita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PoznamkaNaVP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PoznamkaNaVP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DelkaVymeny)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DelkaVymeny)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CyklusCasReal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CyklusCasReal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumUkonceni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumUkonceni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZahlaseneMnozstvi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZahlaseneMnozstvi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZaskladneneMnozstvi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZaskladneneMnozstvi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STAV_NASLEDUJICI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STAV_NASLEDUJICI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FORMA.ZAFO_Forma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FORMA.ZAFO_Forma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STROJ.ZAOR_Organizace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STROJ.ZAOR_Organizace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SY_STAV.TABULKA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SY_STAV.TABULKA)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

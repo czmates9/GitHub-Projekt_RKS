@@ -1,0 +1,127 @@
+﻿@model IEnumerable<RKC_IS.DataAccess.Model.AutoMapping.VYROBA_ZAZNAM>
+
+@{
+    ViewBag.Title = "výrobní výkazy";
+    Layout = "~/Areas/UserIN/Views/Shared/_LayoutLisovna.cshtml";
+}
+
+    <h2>výrobní výkazy</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SY_STAV.STAV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SY_STAV.POPIS)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.USER.ZAOR_organizace)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.CasPrace)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.OK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Poznamka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeEnd)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.C_USER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_USER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_DATE)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.STAV_NASLEDUJICI)
+        </th>*@
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.ZAKAZKA.Oznaceni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VYROBA_ZAZNAM2.Poznamka)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.CasPrace)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.SY_STAV.STAV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SY_STAV.POPIS)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OK)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NOK)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Poznamka)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TimeStart)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TimeEnd)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.C_USER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_USER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_DATE)
+        </td>*@
+    @*<td>
+            @Html.DisplayFor(modelItem => item.STAV_NASLEDUJICI)
+        </td>*@
+
+    <td>
+        @Html.DisplayFor(modelItem => item.USER.ZAOR_organizace)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ZAKAZKA.Oznaceni)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.VYROBA_ZAZNAM2.Poznamka)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
+}
+
+</table>

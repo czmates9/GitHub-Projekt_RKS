@@ -1,0 +1,88 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.GRUPA
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GRUPA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ZATG_TypGrupa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZATG_TypGrupa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STAV_NASLEDUJICI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STAV_NASLEDUJICI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SMENA.ZAOR_Organizace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SMENA.ZAOR_Organizace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SY_STAV.TABULKA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SY_STAV.TABULKA)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

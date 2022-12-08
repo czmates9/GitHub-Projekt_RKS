@@ -1,0 +1,186 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.STROJ
+@{
+    ViewBag.Title = "DeleteStroj";
+    Layout = "~/Areas/UserIN/Views/Shared/_LayoutLisovna.cshtml";
+}
+
+<h2>DeleteStroj</h2>
+<h3>Opravdu chceš smazat tento stroj?</h3>
+<div>
+    <h4>STROJ</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ZAOR_Organizace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZAOR_Organizace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZANS_NaklStr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZANS_NaklStr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZATS_Typ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZATS_Typ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZAVY_Vyrobce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZAVY_Vyrobce)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazev)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazev)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cislo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cislo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InventarniCislo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventarniCislo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VyrobniCislo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VyrobniCislo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumVyroby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumVyroby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DobaChodu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DobaChodu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.X)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.X)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Y)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Y)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STAV_NASLEDUJICI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STAV_NASLEDUJICI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SY_STAV.TABULKA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SY_STAV.TABULKA)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Zpět na seznam", "PrehledStroju")
+        </div>
+    }
+</div>
+

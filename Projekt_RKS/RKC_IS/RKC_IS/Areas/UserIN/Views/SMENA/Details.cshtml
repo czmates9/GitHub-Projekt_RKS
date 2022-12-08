@@ -1,0 +1,42 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.SMENA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SMENA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ZAOR_Organizace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZAOR_Organizace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZADS_DruhSmena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZADS_DruhSmena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

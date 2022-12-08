@@ -1,0 +1,58 @@
+﻿@model IEnumerable<RKC_IS.DataAccess.Model.AutoMapping.SY_STAV>
+
+@{
+    ViewBag.Title = "Údržba stavů záznamu TaBulek";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Údržba stavů záznamu TaBulek</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TABULKA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STAV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POPIS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.L_PLATI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BARVA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TABULKA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STAV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POPIS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.L_PLATI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BARVA)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

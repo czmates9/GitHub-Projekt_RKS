@@ -1,0 +1,177 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.CISELNIK_DEFINICE
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CISELNIK_DEFINICE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DOMENA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOMENA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAZEV_CISELNIKU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAZEV_CISELNIKU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.POPIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POPIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOMENA_M)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOMENA_M)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MASKA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MASKA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KOD_VYZNAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KOD_VYZNAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KOD_M_VYZNAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KOD_M_VYZNAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TXT1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TXT1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TXT2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TXT2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L0_VYZNAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L0_VYZNAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L1_VYZNAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L1_VYZNAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L2_VYZNAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L2_VYZNAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L3_VYZNAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L3_VYZNAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L4_VYZNAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L4_VYZNAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L5_VYZNAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L5_VYZNAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L6_VYZNAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L6_VYZNAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L7_VYZNAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L7_VYZNAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L8_VYZNAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L8_VYZNAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.L9_VYZNAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.L9_VYZNAM)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

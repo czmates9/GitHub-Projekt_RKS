@@ -1,0 +1,147 @@
+﻿@model IEnumerable<RKC_IS.DataAccess.Model.STROJ>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ZAOR_Organizace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZANS_NaklStr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZATS_Typ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZAVY_Vyrobce)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nazev)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cislo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InventarniCislo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VyrobniCislo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatumVyroby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DobaChodu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.X)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Y)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STAV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STAV_NASLEDUJICI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_USER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_USER)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZAOR_Organizace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZANS_NaklStr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZATS_Typ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZAVY_Vyrobce)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nazev)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cislo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InventarniCislo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VyrobniCislo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumVyroby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DobaChodu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.X)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Y)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STAV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STAV_NASLEDUJICI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_USER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_USER)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

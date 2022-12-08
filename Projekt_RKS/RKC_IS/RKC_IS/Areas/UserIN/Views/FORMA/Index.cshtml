@@ -1,0 +1,117 @@
+﻿@model IEnumerable<RKC_IS.DataAccess.Model.AutoMapping.FORMA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ZAFO_Forma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZAVY_Vyrobce)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PocetKavit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CyklusCas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RokVyroby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Umisteni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hmotnost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatumZadani)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STAV_NASLEDUJICI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_USER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_USER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.M_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PocetVP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SY_STAV.TABULKA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZAFO_Forma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZAVY_Vyrobce)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PocetKavit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CyklusCas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RokVyroby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Umisteni)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hmotnost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumZadani)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STAV_NASLEDUJICI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_USER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_USER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.M_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PocetVP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SY_STAV.TABULKA)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

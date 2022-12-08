@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="apple-touch-icon" sizes="57x57" href="@Url.Content("~/Feature/Favicon/apple-icon-57x57.png")" />
+    <link rel="apple-touch-icon" sizes="60x60" href="@Url.Content("~/Feature/Favicon/apple-icon-60x60.png")" />
+    <link rel="apple-touch-icon" sizes="72x72" href="@Url.Content("~/Feature/Favicon/apple-icon-72x72.png")" />
+    <link rel="apple-touch-icon" sizes="76x76" href="@Url.Content("~/Feature/Favicon/apple-icon-76x76.png")" />
+    <link rel="apple-touch-icon" sizes="114x114" href="@Url.Content("~/Feature/Favicon/apple-icon-114x114.png")" />
+    <link rel="apple-touch-icon" sizes="120x120" href="@Url.Content("~/Feature/Favicon/apple-icon-120x120.png")" />
+    <link rel="apple-touch-icon" sizes="144x144" href="@Url.Content("~/Feature/Favicon/apple-icon-144x144.png")" />
+    <link rel="apple-touch-icon" sizes="152x152" href="@Url.Content("~/Feature/Favicon/apple-icon-152x152.png")" />
+    <link rel="apple-touch-icon" sizes="180x180" href="@Url.Content("~/Feature/Favicon/apple-icon-180x180.png")" />
+    <link rel="icon" type="image/png" sizes="192x192" href="@Url.Content("~/Feature/Favicon/android-icon-192x192.png")" />
+    <link rel="icon" type="image/png" sizes="32x32" href="@Url.Content("~/Feature/Favicon/favicon-32x32.png")" />
+    <link rel="icon" type="image/png" sizes="96x96" href="@Url.Content("~/Feature/Favicon/favicon-96x96.png")" />
+    <link rel="icon" type="image/png" sizes="16x16" href="@Url.Content("~/Feature/Favicon/favicon-16x16.png")" />
+    <link rel="manifest" href="@Url.Content("~/Feature/Favicon/manifest.json")" />
+    <meta name="msapplication-TileImage" href="@Url.Content("~/Feature/Favicon/ms-icon-144x144.png")" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        @*<div class="container">*@
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Hedva", "Index", "Hedva", new { area = "UserIN" }, new { @class = "navbar-brand" })
+
+        </div>
+        <div class="navbar-collapse collapse">
+            @*--------------------------------------Začátek roletovacího Menu--------------------------------------------------------------------*@
+
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Haly <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Lisovna", "Index", "Lisovna", new { area = "UserIN" }, null)</li>
+                        <li>@Html.ActionLink("Konečná montáž", "Index", "KonecnaMontaz", new { area = "UserIN" }, null)</li>
+                        <li>@Html.ActionLink("Příprava", "Index", "Priprava", new { area = "UserIN" }, null)</li>
+                        <li>@Html.ActionLink("Hedva", "Index", "Hedva", new { area = "UserIN" }, null)</li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Stroje", "Index", "STROJ", new { area = "UserIN" }, null)</li>
+            </ul>
+
+
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("_Layout", null)</li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                @if (User.IsInRole("admin"))
+                {
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">IS <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @*<li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>*@
+                            <li class="dropdown-header">Části</li>
+                            <li>@Html.ActionLink("Administrátorská", "Index", "Home", new { area = "Admin" }, null)</li>
+                            <li>@Html.ActionLink("Bez přihlášení", "Index", "Home", new { area = "" }, null)</li>
+
+                        </ul>
+                    </li>
+                }
+            </ul>
+
+
+            @Html.Partial("_LoginPartial")
+
+            @*--------------------------------------Konec roletovacího Menu--------------------------------------------------------------------*@
+        </div>
+        @*</div>*@
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

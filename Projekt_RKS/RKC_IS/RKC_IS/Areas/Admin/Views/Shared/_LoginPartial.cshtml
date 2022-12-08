@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity;
+@using Microsoft.AspNet.Identity.Owin;
+@using Microsoft.Owin.Security;
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @*@Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })*@
+                @*@Html.ActionLink(User.Identity.GetUserName(), "DetailUzivatele", "Home", new { area = "" }, htmlAttributes: new { ID_uzivatel = User.Identity.GetUserId<int>() })*@
+
+
+                @Html.ActionLink(User.Identity.GetUserName(), "DetailUzivatele", "Home", new { area = "", ID_uzivatel = User.Identity.GetUserId<int>() }, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Odhlásit</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        @*<li>@Html.ActionLink("Registrace", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+        <li>@Html.ActionLink("Přihlásit", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

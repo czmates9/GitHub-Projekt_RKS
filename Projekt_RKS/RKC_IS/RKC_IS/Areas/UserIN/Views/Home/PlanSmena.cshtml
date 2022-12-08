@@ -1,0 +1,41 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.GRUPA
+@{
+    ViewBag.Title = "Vytvořit plán směny";
+}
+
+<h2>Vytvořit plán směny</h2>
+
+<br />
+<br />
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+<div class="form-group">
+    @Html.Label("listSmen", "Výběr směny:", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownList("listSmen", null, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ID_SMENA, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.Label("ListUzivatel", "Výběr zaměstnance:", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownList("ListUzivatel", null, htmlAttributes: new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ID_SMENA, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<br />
+<br />
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Vytvořit plán" class="btn btn-default" />
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

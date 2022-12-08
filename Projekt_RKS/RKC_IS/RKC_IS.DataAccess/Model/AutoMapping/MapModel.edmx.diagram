@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="975e945d7a1348028958fb1b3d7aba30" Name="Diagram1">
+        <EntityTypeShape EntityType="RKC_Database_00Model.AP_HISTORIE" Width="1.5" PointX="5.25" PointY="60" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.AspNetRoles" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.AspNetUsers" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.CISELNIK_DATA" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.CISELNIK_DEFINICE" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.ESP_LOG" Width="1.5" PointX="5.25" PointY="49.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.FORMA" Width="1.5" PointX="3" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.FORMA_OPRAVA" Width="1.5" PointX="8.25" PointY="50.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.GRUPA" Width="1.5" PointX="3" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.KONSTANTY" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.MATERIAL" Width="1.5" PointX="10.5" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.MEZNI_VZOREK" Width="1.5" PointX="8.25" PointY="56.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.ROLE" Width="1.5" PointX="3" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.SESTAVA" Width="1.5" PointX="11.25" PointY="50.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.SESTAVA_DEFINICE" Width="1.5" PointX="3" PointY="45.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.SMENA" Width="1.5" PointX="0.75" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.STROJ" Width="1.5" PointX="3" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.STROJ_GRUPA" Width="1.5" PointX="11.25" PointY="47.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.STROJ_PARAMETR" Width="1.5" PointX="5.25" PointY="52.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.STROJ_PORUCHA" Width="1.5" PointX="8.25" PointY="63.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.STROJ_UDRZBA" Width="1.5" PointX="11.25" PointY="57.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.SY_FORMULAR" Width="1.5" PointX="3.75" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.SY_MODUL" Width="1.5" PointX="1.5" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.SY_MODUL_ROLE" Width="1.5" PointX="5.25" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.SY_POLOZKA" Width="1.5" PointX="6" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.SY_POLOZKA_STAV" Width="1.5" PointX="8.25" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.SY_PRECHOD" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.SY_STAV" Width="1.5" PointX="0.75" PointY="42" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.SY_TABULKA" Width="1.5" PointX="3" PointY="60.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.USER" Width="1.5" PointX="3" PointY="71.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.USER_GRUPA" Width="1.5" PointX="11.25" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.USER_ROLE" Width="1.5" PointX="5.25" PointY="57" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.USER_VZORKOVANI" Width="1.5" PointX="10.5" PointY="62.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.UserClaim" Width="1.5" PointX="5.25" PointY="73.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.UserLogin" Width="1.5" PointX="5.25" PointY="76.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.VYROBA_ZAZNAM" Width="1.5" PointX="13.5" PointY="55" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.VZORKOVANI" Width="1.5" PointX="5.25" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.WORKMONITOR" Width="1.5" PointX="5.25" PointY="66.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.ZAKAZKA" Width="1.5" PointX="8.25" PointY="40.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RKC_Database_00Model.ZAKAZKA_SAP" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__AP_HISTOR__ID_US__6166761E" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__AP_HISTOR__TABUL__41EDCAC5" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__AP_HISTORI__STAV__32AB8735" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__ESP_LOG__ID_STRO__540C7B00" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__FORMA__STAV__57A801BA" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__FORMA_OPR__ID_FO__59C55456" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__MEZNI_VZO__ID_FO__58D1301D" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__VZORKOVAN__ID_FO__57DD0BE4" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__ZAKAZKA__ID_FORM__5AB9788F" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__FORMA_OPR__ID_US__5F7E2DAC" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__FORMA_OPRA__STAV__3D2915A8" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__GRUPA__ID_SMENA__3FD07829" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__GRUPA__STAV__3EDC53F0" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__STROJ_GRU__ID_GR__681373AD" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__USER_GRUP__ID_GR__671F4F74" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__MATERIAL__ID_M__10E07F16" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__MATERIAL__ID_VZO__0FEC5ADD" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__MATERIAL__ID_ZAK__0EF836A4" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__MEZNI_VZO__ID_US__5E8A0973" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__MEZNI_VZOR__STAV__3C34F16F" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__ROLE__STAV__339FAB6E" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__SY_MODUL___ID_RO__45BE5BA9" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__SY_POLOZK__ID_RO__46B27FE2" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__SY_POLOZK__ID_RO__47A6A41B" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__USER_ROLE__ID_RO__44CA3770" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__SESTAVA__ID_SEST__65370702" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__SESTAVA__ID_STRO__5224328E" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__SESTAVA_DE__STAV__3E1D39E1" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__STROJ__STAV__367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__STROJ_GRU__ID_ST__55009F39" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__STROJ_PAR__ID_ST__531856C7" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__STROJ_POR__ID_ST__4E53A1AA" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__STROJ_UDR__ID_ST__4F47C5E3" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__VZORKOVAN__ID_ST__503BEA1C" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__WORKMONIT__ID_ST__51300E55" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__ZAKAZKA__ID_STRO__4D5F7D71" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__STROJ_POR__ID_US__5CA1C101" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__STROJ_PORU__STAV__395884C4" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__STROJ_UDR__ID_US__5BAD9CC8" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__STROJ_UDRZ__STAV__37703C52" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__SY_FORMUL__ID_MO__498EEC8D" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__SY_POLOZK__ID_FO__4A8310C6" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__SY_MODUL___ID_MO__489AC854" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__SY_POLOZK__ID_PO__4B7734FF" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__SY_POLOZKA__STAV__3493CFA7" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__USER__STAV__3587F3E0" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__VYROBA_ZAZ__STAV__220B0B18" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__VZORKOVANI__STAV__3B40CD36" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__ZAKAZKA__STAV__3864608B" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__USER_GRUP__ID_US__625A9A57" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__USER_ROLE__ID_US__607251E5" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__USER_VZOR__ID_US__5D95E53A" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__VYROBA_ZA__ID_US__23F3538A" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK_dbo_UserClaim_dbo_USER_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK_dbo_UserLogin_dbo_USER_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__USER_VZOR__ID_VZ__634EBE90" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__VYROBA_ZA__ID_ZA__22FF2F51" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.FK__VYROBA_ZAZ__ID_M__24E777C3" ManuallyRouted="false" />
+        <AssociationConnector Association="RKC_Database_00Model.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

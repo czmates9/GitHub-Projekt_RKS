@@ -1,0 +1,149 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.FORMA
+
+@{
+    ViewBag.Title = "Detail formy";
+}
+
+<h2>Detail formy</h2>
+
+<div class="btn btn-warning">
+    <a href="javascript:void(0);" id="backLink">ZPĚT</a>
+
+</div>
+
+<script type="text/javascript">
+    $(document).on('click', '#backLink', function () {
+        history.go(-1);
+    });
+</script>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ZAFO_Forma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZAFO_Forma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZAVY_Vyrobce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZAVY_Vyrobce)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PocetKavit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PocetKavit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CyklusCas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CyklusCas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RokVyroby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RokVyroby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Umisteni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Umisteni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hmotnost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hmotnost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumZadani)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumZadani)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STAV_NASLEDUJICI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STAV_NASLEDUJICI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_USER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_USER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PocetVP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PocetVP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SY_STAV.TABULKA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SY_STAV.TABULKA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
+    @Html.ActionLink("Seznam forem", "Index")
+</p>

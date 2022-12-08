@@ -1,0 +1,59 @@
+﻿@model RKC_IS.DataAccess.Model.AutoMapping.USER_ROLE
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Přiřaď roli</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+       
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ID_USER, null, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.DropDownList("ID_USER", null, htmlAttributes: new { @class = "form-control" })*@
+                @Html.DropDownList("ID_USER", (SelectList)ViewBag.UserList, "--Vyber--", htmlAttributes: new { @class = "form-control" })
+
+
+                @Html.ValidationMessageFor(model => model.ID_USER, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ID_ROLE, null, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.DropDownList("ID_ROLE", null, htmlAttributes: new { @class = "form-control" })*@
+                @Html.DropDownList("ID_ROLE", (SelectList)ViewBag.RoleList, "--Vyber--", htmlAttributes: new { @class = "form-control" })
+
+
+                @Html.ValidationMessageFor(model => model.ID_ROLE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.L_PLATI, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.L_PLATI)
+                    @Html.ValidationMessageFor(model => model.L_PLATI, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Přiřaď" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Seznam přiřazených rolí", "Index")
+</div>
